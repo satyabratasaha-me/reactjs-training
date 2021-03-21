@@ -45,7 +45,7 @@ class CompanyRevenue extends Component {
         
 
         return(
-            <TableComponent headers={headers} items={items}></TableComponent>
+            <TableComponent headers={headers} items={items}>Company Revenue</TableComponent>
         )
 
     }
