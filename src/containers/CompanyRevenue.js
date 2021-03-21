@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import TableComponent from '../components/Table'
 
 class CompanyRevenue extends Component {
 
@@ -23,14 +24,16 @@ class CompanyRevenue extends Component {
         }
     }
 
+    
 
     render(){
-        const headers = this.state.headers.map(header => {
+
+        const headers =  this.state.headers.map(header => {
             return(
                 <th>{header}</th>
             )
         })
-
+    
         const items = this.state.items.map(item => {
             return(
                 <tr>
@@ -39,20 +42,10 @@ class CompanyRevenue extends Component {
                 </tr>
             )
         })
+        
 
         return(
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            {headers}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {items}
-                    </tbody>
-                </table>
-            </div>
+            <TableComponent headers={headers} items={items}></TableComponent>
         )
 
     }
