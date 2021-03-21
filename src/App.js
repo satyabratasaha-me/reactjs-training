@@ -1,6 +1,6 @@
-import CompanyCeo from './components/CompanyCeo/CompanyCeo'
+import CompanyCeo from './containers/CompanyCeo'
 import './App.css';
-import CompanyRevenue from './components/CompanyRevenue/CompanyRevenue';
+import CompanyRevenue from './containers/CompanyRevenue';
 
 function App() {
   return (
