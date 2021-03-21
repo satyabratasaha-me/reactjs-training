@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-// import  '../CompanyCeo/CompanyCeo.css'
+// import  '../CompanyRevenue/CompanyRevenue.css'
 
-class CompanyCeo extends Component {
+class CompanyRevenue extends Component {
 
     constructor(props){
         super(props);
@@ -16,26 +16,22 @@ class CompanyCeo extends Component {
                 <table>
                     <thead>
                         <tr>
-                            <th>Emp. ID</th>
-                            <th>Emp. Name</th>
                             <th>Company</th>
+                            <th>Revenue(USD)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>U1234</td>
-                            <td>Tim Cook</td>
                             <td>Apple</td>
+                            <td>$111.4 billion </td>
                         </tr>
                         <tr>
-                            <td>U1235</td>
-                            <td>Sundar Pichai</td>
                             <td>Google</td>
+                            <td>$741 billion</td>
                         </tr>
                         <tr>
-                            <td>U1236</td>
-                            <td>Jeff Bezos</td>
                             <td>Amazon</td>
+                            <td>$233 billion</td>
                         </tr>
                     </tbody>
                 </table>
@@ -47,4 +43,4 @@ class CompanyCeo extends Component {
 
 }
 
-export default CompanyCeo;
+export default CompanyRevenue;
