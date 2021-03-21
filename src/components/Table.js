@@ -3,6 +3,7 @@ import React from 'react';
 const Table = (props) => {
     return(
         <div>
+            <p>{props.children}</p>
             <table>
                 <thead>
                     <tr>
