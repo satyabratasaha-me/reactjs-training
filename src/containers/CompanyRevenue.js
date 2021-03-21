@@ -57,7 +57,7 @@ class CompanyRevenue extends Component {
         
 
         return(
-            <div>
+            <div style={{padding:'50px'}}>
                 <button onClick={this.fetchHandler.bind(this)}>Fetch</button>
                 <button onClick={this.clearHandler.bind(this)}>Clear</button>
                 <TableComponent headers={headers} items={items}>Company Revenue</TableComponent>
