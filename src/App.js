@@ -5,7 +5,7 @@ import CompanyRevenue from './containers/CompanyRevenue';
 function App() {
   return (
     <div className="App">
-      <div>
+      <div >
         <CompanyCeo/>
       </div>
       <div>
