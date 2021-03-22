@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import TableComponent from '../components/Table'
 import enhancedTable from '../hoc/enhancedTable'
-import getData from '../data/company_ceo'
+import {getCompanyCeo} from '../data/data'
 
 class CompanyCeo extends Component {
 
@@ -32,5 +32,5 @@ class CompanyCeo extends Component {
 
 }
 
-export default enhancedTable(CompanyCeo, getData);
+export default enhancedTable(CompanyCeo, getCompanyCeo);
 

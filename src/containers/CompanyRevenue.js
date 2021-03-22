@@ -1,52 +1,16 @@
 import React, {Component} from 'react'
 import TableComponent from '../components/Table'
+import enhancedTable from '../hoc/enhancedTable'
+import {getCompanyRevenue} from '../data/data'
 
 class CompanyRevenue extends Component {
-
-    constructor(props){
-        super(props);
-        this.state = {
-            'headers' : ['Company', 'Revenue(USD)'],
-            'items' : []
-        }
-    }
-
-    fetchHandler = () => {
-        this.setState({
-            'items' : [
-                {
-                    'Company' : 'Apple',
-                    'Revenue(USD)' : '$111.4 billion'
-                },
-                {
-                    'Company' : 'Google',
-                    'Revenue(USD)' : '$741 billion'
-                },
-                {
-                    'Company' : 'Amazon',
-                    'Revenue(USD)' : '$233 billion'
-                }
-            ],
-        })
-    }
-
-    clearHandler = () => {
-        this.setState({
-            'items' : [],
-        })
-    }
-
     
 
     render(){
 
-        const headers = this.state.headers.map((header,index) => {
-            return(
-                <th key={index}>{header}</th>
-            )
-        })
+        const {header,item} = this.props
     
-        const items = this.state.items.map((item,index) => {
+        const items = item.map((item,index) => {
             return(
                 <tr key = {index}>
                     <td>{item.Company}</td>
@@ -57,11 +21,8 @@ class CompanyRevenue extends Component {
         
 
         return(
-            <div style={{padding:'50px'}}>
-                <button onClick={this.fetchHandler.bind(this)}>Fetch</button>
-                <button onClick={this.clearHandler.bind(this)}>Clear</button>
-                <TableComponent headers={headers} items={items}>Company Revenue</TableComponent>
-            </div>
+            <TableComponent headers={header} items={items}>Company Revenue</TableComponent>
+
         )
 
     }
@@ -69,4 +30,4 @@ class CompanyRevenue extends Component {
 
 }
 
-export default CompanyRevenue;
+export default enhancedTable(CompanyRevenue,getCompanyRevenue);  

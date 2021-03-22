@@ -1,4 +1,4 @@
-const getData = () => {
+export const getCompanyCeo = () => {
     return{
         'items':[
             {
@@ -22,4 +22,22 @@ const getData = () => {
     }
 }
 
-export default getData;
+export const getCompanyRevenue = () => {
+    return{
+        'items' : [
+            {
+                'Company' : 'Apple',
+                'Revenue(USD)' : '$111.4 billion'
+            },
+            {
+                'Company' : 'Google',
+                'Revenue(USD)' : '$741 billion'
+            },
+            {
+                'Company' : 'Amazon',
+                'Revenue(USD)' : '$233 billion'
+            }
+        ],
+        'headers' : ['Company','Revenue(USD)']
+    }
+}
