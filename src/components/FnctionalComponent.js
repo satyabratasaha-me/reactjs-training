@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Label from './Label';
 
 
 
@@ -23,7 +24,8 @@ const FunctionalComponent = () => {
 
     return(
         <React.Fragment>
-            <h3>Clicked {counter} times</h3>
+            {/* <h3>Clicked {counter} times</h3> */}
+            <Label counter = {counter}></Label>
             <button onClick={(event)=>incrementHanler(event,counter)}>Increment</button>
             <button onClick={(event)=>resetHandler(event)}>Reset</button>
         </React.Fragment>

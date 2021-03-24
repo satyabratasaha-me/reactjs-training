@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ClassLabel from './ClassLabel'
+import Label from './Label'
 
 
 class ClassComponent extends Component{
@@ -23,10 +25,38 @@ class ClassComponent extends Component{
         })
     }
 
+    componentDidMount(){
+        console.log('Componnet Mounted')
+        this.setState({
+            'counter':3
+        })
+       
+    }
+
+    shouldComponentUpdate(){
+        if (this.state.counter >= 9) {
+            return false
+        }
+        else{
+            return true
+        }
+    }
+
+    componentWillUnmount(){
+        console.log('CleanUp')
+    }
+
+    componentDidCatch(){
+
+    }
+
+    
     render(){
+  
+        console.log('Componnet Rendered')
         return(
             <React.Fragment>
-                <h3>Clicked {this.state.counter} times</h3>
+                <ClassLabel counter = {this.state.counter}></ClassLabel>
                 <button style= {{color:'blue'}} onClick={this.incrementHandler.bind(this,this.state.counter)}>Increment</button>
                 <button style= {{color:'red'}} onClick={this.resetHandler.bind(this)}>Reset</button>
             </React.Fragment>
