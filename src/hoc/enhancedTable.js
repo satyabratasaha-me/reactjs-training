@@ -12,6 +12,7 @@ const enhancedTable = (OriginalComponent,data) => {
             }
         }
 
+
         fetchHandler = () => {
             this.setState({
                     'items': data().items,
@@ -25,6 +26,7 @@ const enhancedTable = (OriginalComponent,data) => {
                 'headers' : []
             })
         }
+
     
 
         render(){

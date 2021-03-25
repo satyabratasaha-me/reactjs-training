@@ -1,17 +1,54 @@
 import React, {Component} from 'react'
 import TableComponent from '../components/Table'
-import enhancedTable from '../hoc/enhancedTable'
-import {getCompanyCeo} from '../data/data'
 
 class CompanyCeo extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {
+            'items': [],
+            'headers' : ['Emp. ID','Emp.Name','Company']
+        }
+    }
+
+    fetchHandler = () => {
+        this.setState({
+            'items':[
+                {
+                    'Emp. ID' : 'U1234',
+                    'Emp. Name' : 'Tim Cook',
+                    'Company' : 'Apple'
+                },
+                {
+                    'Emp. ID' : 'U1235',
+                    'Emp. Name' : 'Sundar Pichai',
+                    'Company' : 'Google'
+                },
+                {
+                    'Emp. ID' : 'U1236',
+                    'Emp. Name' : 'Jeff Bezos',
+                    'Company' : 'Amazon'
+                }
+            ],
+        })
+    }
+
+    clearHandler = () => {
+        this.setState({
+            'items' : [],
+        })
+    }
+
+
     render(){
 
-        const {header,item} = this.props
-
-
+        const headers = this.state.headers.map((header,index) => {
+            return(
+                <th key={index}>{header}</th>
+            )
+        })
     
-        const items = item.map((item,index) => {
+        const items = this.state.items.map((item,index) => {
             return(
                 <tr key = {index}>
                     <td>{item["Emp. ID"]}</td>
@@ -20,11 +57,13 @@ class CompanyCeo extends Component {
                 </tr>
             )
         })
-
-        
         
         return(
-                <TableComponent headers={header} items={items}>Company CEO</TableComponent>
+            <div style={{padding:'50px'}}>
+                <button onClick={this.fetchHandler.bind(this)}>Fetch</button>
+                <button onClick={this.clearHandler.bind(this)}>Clear</button>
+                <TableComponent headers={headers} items={items}>Company CEO</TableComponent>
+            </div>
         )
 
     }
@@ -32,5 +71,4 @@ class CompanyCeo extends Component {
 
 }
 
-export default enhancedTable(CompanyCeo, getCompanyCeo);
-
+export default CompanyCeo;
